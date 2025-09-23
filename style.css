@@ -1,0 +1,347 @@
+/* === Базовые стили === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  background: #fafafa;
+  color: #333;
+}
+
+/* === Навигация === */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #b22222;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #b22222;
+}
+
+/* === Hero (главная) === */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;
+  gap: 40px;
+}
+
+.hero-left h1 {
+  font-size: 2.5rem;
+  color: #b22222;
+}
+
+.hero-left p {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-bowl-wrapper {
+  max-width: 350px; /* сделал боул больше */
+  animation: spin 12s linear infinite;
+}
+
+.hero-bowl {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/*id celector fo hero*/
+#main-hero {
+  background: linear-gradient(135deg, #fff, #fff5f5);
+  border-bottom: 4px solid #b22222;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* === Story (интерьер) === */
+.story {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 10%;
+}
+
+.story img {
+  width: 100%;       /* по ширине экрана */
+  height: 450px;     /* больше высота */
+  object-fit: cover; /* не сплющивается */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* === Season Specials === */
+.dish-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 40px 10%;
+}
+
+.dish-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.dish-card img {
+  width: 100%;
+  height: 220px;       /* одинаковая высота */
+  object-fit: cover;   /* фото не сплющиваются */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* === Шефы === */
+.chef-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 40px 10%;
+}
+
+.chef-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.chef-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* === Hero (меню) === */
+.menu-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 10%;
+  background: #fff5f5;
+  gap: 40px;
+}
+
+.menu-hero-left {
+  flex: 1;
+}
+
+.menu-hero-left h2 {
+  font-size: 2rem;
+  color: #b22222;
+  margin-bottom: 10px;
+}
+
+.menu-hero-left p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.menu-hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-bowl-wrapper {
+  max-width: 280px;
+}
+
+.menu-bowl {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* === Сетка меню (menu.html) === */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 40px 10%;
+}
+
+.menu-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 230px;       /* одинаковая высота */
+  object-fit: cover;   /* фото не сплющиваются */
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.menu-page h2.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #b22222;
+  margin: 40px 0 25px 0;
+}
+
+
+.menu-item h3 {
+  font-size: 1.2rem;
+  color: #b22222;
+  margin-bottom: 8px;
+}
+
+.menu-item p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* === Story (интерьер) === */
+.story {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 10%;
+  background: linear-gradient(135deg, #fff5f5, #ffeaea); /* нежный градиент фон */
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  margin: 50px 10%;
+}
+
+.story img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.story h2 {
+  color: #b22222;
+  margin-bottom: 15px;
+}
+
+/* === Заголовки (центрирование) === */
+.new-dishes h2,
+.chefs h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #b22222;
+  margin-bottom: 30px;
+}
+
+/* === Season Specials === */
+.dish-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  gap: 30px;
+  padding: 40px 10%;
+}
+
+.dish-card img {
+  width: 100%;
+  height: 280px;        /* увеличил фото */
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+/* === Шефы === */
+.chef-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px 10%;
+}
+
+.chef-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.chef-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.chef-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;   /* делаем фото круглыми */
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #b22222; /* акцент */
+}
+
+/* === Hero (меню) — вращение боула === */
+.menu-bowl-wrapper {
+  max-width: 280px;
+  animation: spin 12s linear infinite; /* добавил анимацию */
+}
+
+
+/* === Footer === */
+footer {
+  text-align: center;
+  background: #b22222;
+  color: #fff;
+  padding: 15px;
+  margin-top: 40px;
+}
+
