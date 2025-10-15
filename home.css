@@ -1,0 +1,382 @@
+/* === Базовые стили === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  background: #fafafa;
+  color: #333;
+}
+
+/*==datetime==*/
+.datetime {
+  font-size: 0.9rem;
+  color: #555;
+  background: #fff0f0;
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+/* Popup styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  width: 300px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.error-box {
+  color: red;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.bg-btn, .open-popup {
+  margin: 15px;
+  padding: 10px 20px;
+  background-color: #e8b4b8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.datetime {
+  font-size: 14px;
+  color: #444;
+  margin-left: 15px;
+}
+
+
+/*===Media queries===*/
+@media (max-width: 1024px){
+    .hero, .story{
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-left, .story img{
+        width:100%
+    }
+}
+
+@media (max-width: 760px){
+    nav ul{
+        flex-direction: column;
+        gap:10px;
+    }
+    .dish-grid, .chef-grid{
+        grid-template-columns: 1fr 1 fr;
+    }
+    .hero-left h1{
+        font-size:2rem;
+    }
+}
+
+@media(max-width:480px){
+    .dish-grid, .chef-grid{
+        grid-template-columns: 1fr;
+    }
+    .hero-left p, .story p{
+        font-size: 1rem;
+    }
+}
+
+
+/* === Основной контейнер === */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  gap: 20px;
+  padding: 20px;
+}
+
+/* === Header === */
+.header {
+  grid-area: header;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === Sidebar === */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 80px;
+}
+
+.sidebar h3 {
+  font-size: 1.5rem;
+  color: #b22222;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  color: #b22222;
+}
+
+/* === Navigation === */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #b22222;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #b22222;
+}
+
+/* === Main === */
+.main-container {
+  grid-area: main;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === Hero Section === */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;
+  gap: 40px;
+  background: linear-gradient(135deg, #fff, #fff5f5);
+  border-bottom: 4px solid #b22222;
+}
+
+.hero-left h1 {
+  font-size: 2.5rem;
+  color: #b22222;
+}
+
+.hero-left p {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.hero-bowl-wrapper {
+  max-width: 350px;
+  animation: spin 12s linear infinite;
+}
+
+.hero-bowl {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* === Story Section === */
+.story {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 10%;
+  background: linear-gradient(135deg, #fff5f5, #ffeaea);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  margin: 50px 10%;
+}
+
+.story img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.story h2 {
+  color: #b22222;
+  margin-bottom: 15px;
+}
+
+/* === Season Specials === */
+.new-dishes h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #b22222;
+  margin-bottom: 30px;
+}
+
+.dish-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 40px 10%;
+}
+
+.dish-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.dish-card:hover {
+  transform: translateY(-6px);
+}
+
+.dish-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.dish-card:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(219, 127, 127, 0.6);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+.dish-card:hover .overlay {
+  opacity: 1;
+}
+
+/* === Chefs === */
+.chefs h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #b22222;
+  margin-bottom: 30px;
+}
+
+.chef-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px 10%;
+}
+
+.chef-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.chef-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.chef-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #b22222;
+}
+
+/* === Footer === */
+.footer {
+  grid-area: footer;
+  background: #b22222;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+

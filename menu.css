@@ -1,0 +1,315 @@
+/* === Общие стили === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*==datetime==*/
+.datetime {
+  font-size: 0.9rem;
+  color: #555;
+  background: #fff0f0;
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+.accordion-title {
+  background: #f7d1cd;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0 12px;
+}
+
+.accordion-content.active {
+  padding: 12px;
+}
+
+.contact-section {
+  background: #fdf1ec;
+  padding: 25px;
+  margin-top: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.contact-section input,
+.contact-section textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.contact-section button {
+  background-color: #e8b4b8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  background: #fafafa;
+  color: #333;
+}
+
+/*===Media queries===*/
+@media (max-width:1024px){
+    .menu-hero{
+        flex-direction: column;
+        text-align: center;
+    }
+    .menu-bowl-wrapper{
+        max-width: 200px;
+    }
+}
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .menu-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .menu-hero-left h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  .menu-hero-left p {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+/* === Контейнер === */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  gap: 20px;
+  padding: 20px;
+}
+
+/* === Header === */
+.header {
+  grid-area: header;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === Navigation === */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #b22222;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #b22222;
+}
+
+/* === Sidebar === */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 80px;
+}
+
+.sidebar h3 {
+  font-size: 1.5rem;
+  color: #b22222;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  color: #b22222;
+}
+
+/* === Main === */
+.main-container {
+  grid-area: main;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* === Hero === */
+.menu-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 10%;
+  background: #fff5f5;
+  gap: 40px;
+}
+
+.menu-hero-left h2 {
+  font-size: 2rem;
+  color: #b22222;
+}
+
+.menu-hero-left p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.menu-bowl-wrapper {
+  max-width: 280px;
+  animation: spin 12s linear infinite;
+}
+
+.menu-bowl {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* === Menu Grid === */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 40px 10%;
+}
+
+.menu-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(219, 127, 127, 0.6);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+.menu-item:hover .overlay {
+  opacity: 1;
+}
+
+.menu-page h2.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #b22222;
+  margin: 40px 0 25px 0;
+}
+
+/* === Footer === */
+.footer {
+  grid-area: footer;
+  background: #b22222;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+}
+
