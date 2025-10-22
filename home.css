@@ -147,6 +147,17 @@ body {
 }
 
 
+
+.datetime {
+  font-size: 14px;
+  color: #444;
+  margin-left: 15px;
+}
+
+/* ===========================
+   POPUP STYLING
+=========================== */
+
 /* Popup styles */
 .popup {
   display: none;
@@ -194,17 +205,6 @@ body {
   border-radius: 8px;
   cursor: pointer;
 }
-
-
-.datetime {
-  font-size: 14px;
-  color: #444;
-  margin-left: 15px;
-}
-
-/* ===========================
-   POPUP STYLING
-=========================== */
 
 .popup {
   display: none; /* скрыта по умолчанию */
