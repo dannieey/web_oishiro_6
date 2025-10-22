@@ -4,6 +4,101 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* === Load More Button === */
+#loadMoreBtn {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 25px;
+  background-color: #b22222;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+
+#loadMoreBtn:hover {
+  background-color: #ff6b6b;
+  transform: scale(1.05);
+
+
+}
+
+
+/* Стиль кнопки Load More */
+/* === Load More Button === */
+.load-more-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  margin: 20px auto;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #b22222, #ff6b6b);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+.load-more-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #ff6b6b, #b22222);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+
+.load-more-btn:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+
+
+/* === More Dishes Container === */
+#moreDishesContainer {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+
+
+
+/* === Dynamic Style Buttons === */
+.style-buttons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+.style-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #b22222;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+.style-buttons button:hover {
+  background-color: #d43f3a;
+  transform: scale(1.05);
+}
+
+
+
 
 /*==datetime==*/
 .datetime {
@@ -15,6 +110,7 @@
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
 }
 
+
 .accordion-title {
   background: #f7d1cd;
   padding: 12px;
@@ -23,6 +119,7 @@
   cursor: pointer;
   font-weight: bold;
 }
+
 
 .accordion-content {
   max-height: 0;
@@ -33,9 +130,11 @@
   padding: 0 12px;
 }
 
+
 .accordion-content.active {
   padding: 12px;
 }
+
 
 .contact-section {
   background: #fdf1ec;
@@ -45,6 +144,7 @@
   text-align: center;
 }
 
+
 .contact-section input,
 .contact-section textarea {
   width: 90%;
@@ -53,6 +153,7 @@
   border: 1px solid #ccc;
   border-radius: 8px;
 }
+
 
 .contact-section button {
   background-color: #e8b4b8;
@@ -64,12 +165,15 @@
 }
 
 
+
+
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.6;
   background: #fafafa;
   color: #333;
 }
+
 
 /*===Media queries===*/
 @media (max-width:1024px){
@@ -85,7 +189,7 @@ body {
   nav ul {
     flex-direction: column;
     gap: 10px;
-  }
+    }
   .menu-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -93,6 +197,7 @@ body {
     font-size: 1.6rem;
   }
 }
+
 
 @media (max-width: 480px) {
   .menu-grid {
@@ -102,6 +207,11 @@ body {
     font-size: 1rem;
   }
 }
+
+
+
+
+
 
 
 
@@ -119,6 +229,7 @@ body {
   gap: 20px;
   padding: 20px;
 }
+
 
 /* === Header === */
 .header {
@@ -140,17 +251,20 @@ nav {
   top: 0;
 }
 
+
 nav .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: #b22222;
 }
 
+
 nav ul {
   display: flex;
   gap: 20px;
   list-style: none;
 }
+
 
 nav ul li a {
   text-decoration: none;
@@ -159,10 +273,12 @@ nav ul li a {
   transition: 0.3s;
 }
 
+
 nav ul li a:hover,
 nav ul li a.active {
   color: #b22222;
 }
+
 
 /* === Sidebar === */
 .sidebar {
@@ -175,19 +291,23 @@ nav ul li a.active {
   top: 80px;
 }
 
+
 .sidebar h3 {
   font-size: 1.5rem;
   color: #b22222;
   margin-bottom: 20px;
 }
 
+
 .sidebar ul {
   list-style: none;
 }
 
+
 .sidebar ul li {
   margin-bottom: 10px;
 }
+
 
 .sidebar ul li a {
   text-decoration: none;
@@ -196,9 +316,11 @@ nav ul li a.active {
   transition: color 0.3s ease;
 }
 
+
 .sidebar ul li a:hover {
   color: #b22222;
 }
+
 
 /* === Main === */
 .main-container {
@@ -208,8 +330,11 @@ nav ul li a.active {
   border-radius: 10px;
 }
 
+
 /* === Hero === */
+/*menu dynamic*/
 .menu-hero {
+  transition: background-color 0.5s ease, transform 0.5s ease;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -218,38 +343,82 @@ nav ul li a.active {
   gap: 40px;
 }
 
+
 .menu-hero-left h2 {
   font-size: 2rem;
   color: #b22222;
 }
+
 
 .menu-hero-left p {
   font-size: 1.1rem;
   color: #555;
 }
 
+
 .menu-bowl-wrapper {
   max-width: 280px;
   animation: spin 12s linear infinite;
 }
 
+
 .menu-bowl {
   width: 100%;
   height: auto;
 }
+/*button change style*/
+#styleToggleBtn {
+  padding: 8px 20px; /* больше кнопка */
+  font-size: 1rem; /* крупнее текст */
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #b22222, #ff6b6b); /* градиент */
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+
+#styleToggleBtn:hover {
+  transform: scale(1.1); /* чуть больше при hover */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  background: linear-gradient(45deg, #ff6b6b, #b22222); /* инвертируем градиент */
+}
+
+
+.highlighted {
+  background-color: #ffe4b5;
+  transform: scale(1.05);
+}
+
+
+.hidden {
+  display: none;
+}
+
+
+/*animation bowl*/
+
 
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
+
 /* === Menu Grid === */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+
+  /*grid-template-columns: repeat(3, 1fr);*/
   gap: 25px;
   padding: 40px 10%;
 }
+
 
 .menu-item {
   background: #fff;
@@ -260,11 +429,14 @@ nav ul li a.active {
   transition: transform 0.3s;
   position: relative;
   overflow: hidden;
+  display: block;
 }
+
 
 .menu-item:hover {
   transform: translateY(-5px);
 }
+
 
 .menu-item img {
   width: 100%;
@@ -275,9 +447,11 @@ nav ul li a.active {
   transition: transform 0.3s ease;
 }
 
+
 .menu-item:hover img {
   transform: scale(1.05);
 }
+
 
 .overlay {
   position: absolute;
@@ -292,9 +466,11 @@ nav ul li a.active {
   border-radius: 10px;
 }
 
+
 .menu-item:hover .overlay {
   opacity: 1;
 }
+
 
 .menu-page h2.section-title {
   text-align: center;
@@ -302,6 +478,7 @@ nav ul li a.active {
   color: #b22222;
   margin: 40px 0 25px 0;
 }
+
 
 /* === Footer === */
 .footer {
@@ -312,4 +489,12 @@ nav ul li a.active {
   text-align: center;
   border-radius: 10px;
 }
+
+
+
+
+
+
+
+
 

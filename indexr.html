@@ -11,19 +11,27 @@
 <body class="about-page">
 
    <div class="container">
-
-  <!-- Navigation -->
+  <!--header-->
   <header class="header"> 
   <nav>
     <div class="logo">Oishiro</div>
-    <ul>
+    <!-- Кнопка или селектор между логотипом и меню -->
+    <div class="middle-button">
+      <select id="lang-select-header">
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        <option value="kz">Қазақша</option>
+      </select>
+    </div>
+
+    <ul id="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="menu.html">Menu</a></li>
-       <li><a href="indexr.html" class="active">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="indexr.html" class="active" tabindex="0">About</a></li>
+      <li><a href="contact.html" tabindex="0">Contact</a></li>
     </ul>
   </nav>
-  </header>
+</header>
 
   <!-- Sidebar -->
 <aside class="sidebar">
@@ -31,9 +39,38 @@
   <ul>
     <li><a href="contact.html">Reserve a Table</a></li>
     <li><a href="contact.html">Contact Information</a></li>
-    
   </ul>
+   <hr>
+
+  <!-- Контейнер для рейтинга -->
+  <section class="rating-section">
+    <div class="rating-container">
+      <h4>Rate Our Website</h4>
+      <div class="stars">
+        <i class="star">★</i>
+        <i class="star">★</i>
+        <i class="star">★</i>
+        <i class="star">★</i>
+        <i class="star">★</i>
+      </div>
+      <p id="rating-message">Click on a star to rate!</p>
+    </div>
+  </section>
+
+  <!-- === Theme Switch Button === -->
+<div class="theme-toggle">
+  <button id="theme-btn" class="theme-toggle">Switch to Night Mode 🌙</button>
+</div>
+
+<!-- Random Japanese Food Fact -->
+<div class="random-fact">
+  <h3>🍣 Random Japanese Food Fact</h3>
+  <div id="fact-box">Click the button to discover an interesting fact!</div>
+  <button id="fact-btn">Show Random Fact</button>
+</div>
+
 </aside>
+
 
 
  <main class="main-content">
@@ -276,6 +313,12 @@
   <footer class="footer">
     <p>Team: Oishiro | Members: Li Danel, Kuzhentayeva Ramina |</p>
   </footer>
+<script src="lang.js"></script>
+<script src="keyboardNav.js"></script>
+<script src="stars.js"></script> 
+<script src="themeSwitch.js"></script>
+<script src="randomFact.js"></script>
+<script src="gallery.js"></script> 
 <script src="faq.js"></script> 
   </div>
  

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Oishiro</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="contact.css">
   
 
 </head>
@@ -16,11 +16,11 @@
   <header class="header">
   <nav>
     <div class="logo">Oishiro</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="indexr.html">About</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
+    <ul id ="nav-menu">
+      <li><a href="index.html" >Home</a></li>
+      <li><a href="menu.html" >Menu</a></li>
+      <li><a href="indexr.html" tabindex="0">About</a></li>
+      <li><a href="contact.html" class="active" tabindex="0">Contact</a></li>
     </ul>
   </nav>
   </header>
@@ -34,6 +34,60 @@
     <li><a href="indexr.html">Customer Reviews</a></li>
     
   </ul>
+
+  <div class="theme-toggle">
+  <button id="theme-btn" class="theme-toggle">Switch to Night Mode 🌙</button>
+</div>
+
+<div class="about-more-container">
+  <h3>More About Us</h3>
+  <button id="load-info-btn">Learn More About Us</button>
+  <div id="info-result"></div>
+</div>
+
+<hr class="sidebar-divider">
+
+
+  <h3>Reserve Private Dining</h3>
+
+  <form id="privateFormSidebar" class="sidebar-form">
+    <!-- Шаг 1 -->
+    <div class="form-step step-active">
+      <label for="guestName">Name:</label>
+      <input type="text" id="guestName" name="guestName" required placeholder="Your name">
+      <button type="button" class="next-btn">Next</button>
+    </div>
+
+    <!-- Шаг 2 -->
+    <div class="form-step">
+      <label for="guests">Guests:</label>
+      <input type="number" id="guests" name="guests" min="1" max="10" required>
+      <button type="button" class="back-btn">Back</button>
+      <button type="button" class="next-btn">Next</button>
+    </div>
+
+    <!-- Шаг 3 -->
+    <div class="form-step">
+      <label for="occasion">Occasion:</label>
+      <select id="occasion" name="occasion" required>
+        <option value="">Select occasion</option>
+        <option value="birthday">Birthday</option>
+        <option value="corporate">Corporate Event</option>
+        <option value="anniversary">Anniversary</option>
+      </select>
+      <button type="button" class="back-btn">Back</button>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <div id="private-success" style="display:none; margin-top:10px; color:green; font-weight:bold;">
+    ✅ Reservation submitted!
+  </div>
+
+
+
+
+
 </aside>
 
 
@@ -147,6 +201,10 @@
   </footer>
 
   </div>
+<script src="keyboardNav.js"></script>
+<script src="themeSwitch.js"></script>
+<script src="reservationSidebar.js"></script>
+<script src="aboutMore.js"></script>
 <script src="contactus.js"></script>
 <script src="JavaScript.js"></script>
 <script src="changeBackground.js"></script>

@@ -6,48 +6,33 @@
   <link rel="stylesheet" href="home.css">
 </head>
 
-<script src="script.js"></script>
 
 
-<script>
-function updateDateTime() {
-  const now = new Date();
-  const options = {
-    year: 'numeric', month: 'long', day: 'numeric',
-    hour: '2-digit', minute: '2-digit', second: '2-digit'
-  };
-  const formatted = now.toLocaleString('en-US', options);
 
-  const headerClock = document.getElementById('datetime');
-  const footerClock = document.getElementById('footer-datetime');
-  
-  if (headerClock) headerClock.textContent = formatted;
-  if (footerClock) footerClock.textContent = formatted;
-}
 
-setInterval(updateDateTime, 1000);
-updateDateTime();
-</script>
 
 
 
 <body class="home-page">
   <div class="container">
 
+
     <!-- Header -->
     <header class="header">
       <nav>
-        <div class="logo">Oishoro</div>
+        <div class="logo">Oishiro</div>
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="indexr.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
+        <button id="openPopup" class="open-popup">Subscribe</button>
         <div class="datetime" id="datetime"></div>
         <button id="changeBg" class="bg-btn">Change Background</button>
       </nav>
     </header>
+
 
     <!-- Sidebar -->
     <aside class="sidebar">
@@ -61,6 +46,9 @@ updateDateTime();
 
     <!-- Main -->
     <main class="main-container">
+
+
+     
        
       <!-- Hero -->
       <section id="main-hero" class="hero">
@@ -75,89 +63,214 @@ updateDateTime();
         </div>
       </section>
 
+
+       
+      <form id="multiStepForm" class="multi-step-form">
+      <!-- Step 1 -->
+      <div class="step" data-step="1">
+        <h2>Step 1: Your Name</h2>
+        <input type="text" name="name" placeholder="Enter your name">
+        <div class="buttons">
+          <button type="button" class="nextBtn">Next</button>
+        </div>
+      </div>
+
+
+   
+
+
+      <!-- Step 2 -->
+      <div class="step" data-step="2" style="display:none">
+        <h2>Step 2: Your Feedback</h2>
+        <textarea name="feedback" placeholder="Enter your suggestion or feedback"></textarea>
+        <div class="buttons">
+          <button type="button" class="backBtn">Back</button>
+          <button type="submit">Submit</button>
+        </div>
+      </div>
+      </form>
       <!-- Story -->
       <section class="story">
+       
         <img src="images/interier.jpg" alt="Restaurant Story">
         <div>
           <h2>Our Story</h2>
           <p>
-            Oishiro restaurant was founded with a passion for authentic Japanese cuisine. 
-            We bring fresh ingredients, traditional recipes, and modern presentation 
+            Oishiro restaurant was founded with a passion for authentic Japanese cuisine.
+            We bring fresh ingredients, traditional recipes, and modern presentation
             to create an unforgettable dining experience.
           </p>
         </div>
       </section>
 
+
+      <!--Restautant Fun Facts-->
+      <section class="restaurant-info" id="restaurantInfo">
+        <h2>Fun Facts About Oishiro</h2>
+        <p id="restaurantText">
+            Oishiro brings authentic Japanese flavors with a modern twist!
+        </p>
+        <button id="infoBtn">Show Fun Fact</button>
+      </section>
+
+
       <!-- Season Specials -->
   <section class="new-dishes">
   <h2>Season Specials</h2>
   <div class="dish-grid">
-    
+   
     <div class="dish-card">
       <img src="images/salmon_poke.jpg" alt="Salmon Poke">
       <div class="overlay"><p>Fresh salmon poke bowl</p></div>
       <h3>Salmon Poke</h3>
       <p>¥1200</p>
-    </div>
 
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+     
+    </div>
     <div class="dish-card">
       <img src="images/tuna_roll.jpg" alt="Tuna Roll">
       <div class="overlay"><p>Classic tuna sushi roll</p></div>
       <h3>Tuna Roll</h3>
       <p>¥950</p>
+
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+
+
     </div>
+
+
+
 
     <div class="dish-card">
       <img src="images/ramen_deluxe.jpg" alt="Ramen Deluxe">
       <div class="overlay"><p>Deluxe ramen with shrimp and egg</p></div>
       <h3>Ramen Deluxe</h3>
       <p>¥1500</p>
+
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+     
     </div>
+
+
+
 
     <div class="dish-card">
       <img src="images/sashimi_set.jpg" alt="Sashimi Set">
       <div class="overlay"><p>Assorted fresh sashimi</p></div>
       <h3>Sashimi Set</h3>
       <p>¥1800</p>
-    </div>
 
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+
+
+    </div>
     <div class="dish-card">
       <img src="images/tempura_mix.jpg" alt="Tempura Mix">
       <div class="overlay"><p>Crispy tempura assortment</p></div>
       <h3>Tempura Mix</h3>
       <p>¥1100</p>
+
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+
+
     </div>
+     
+
 
     <div class="dish-card">
       <img src="images/matcha_cheesecake.jpg" alt="Matcha Cheesecake">
       <div class="overlay"><p>Sweet matcha cheesecake</p></div>
       <h3>Matcha Cheesecake</h3>
       <p>¥700</p>
+
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+
+
     </div>
+   
+
 
     <div class="dish-card">
       <img src="images/ebi_tempura.jpg" alt="Ebi Tempura">
       <div class="overlay"><p>Golden fried shrimp tempura</p></div>
       <h3>Ebi Tempura</h3>
       <p>¥1200</p>
-    </div>
 
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+    </div>
     <div class="dish-card">
       <img src="images/maguro.jpg" alt="Maguro Sashimi">
       <div class="overlay"><p>Fresh tuna sashimi</p></div>
       <h3>Maguro Sashimi</h3>
       <p>¥1500</p>
+
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+
+
     </div>
+   
+
 
     <div class="dish-card">
       <img src="images/ice_cream.jpg" alt="Matcha Ice Cream">
       <div class="overlay"><p>Creamy green tea ice cream</p></div>
       <h3>Matcha Ice Cream</h3>
       <p>¥600</p>
+
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
     </div>
+
+
+   
+
+
+   
+
+
+     
+
 
   </div>
 </section>
+
+
 
 
       <!-- Chefs -->
@@ -171,11 +284,13 @@ updateDateTime();
       </section>
     </main>
 
+
     <!-- Footer -->
     <footer class="footer">
       <p>Team: Oishiro | Members: Li Danel, Kuzhentayeva Ramina</p>
-      
+     
     </footer>
+
 
   </div>
   <!-- 🔹 Popup Subscription -->
@@ -194,10 +309,21 @@ updateDateTime();
   </div>
 </div>
 
-<!-- 🔹 Button to open popup -->
-<button id="openPopup" class="open-popup">Subscribe</button>
 
-<script src="script.js"></script>
+
+
+<script src="keyboardNav.js"></script>
+<script src="home.js"></script>
+
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
